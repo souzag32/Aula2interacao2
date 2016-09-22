@@ -36,9 +36,22 @@ public class UC01CadastrarEmpresa1 {
 	@Test
 	public void CT01UC01FBCadastra_com_sucesso() {
 		assertEquals(1,empresaDAO.adiciona(empresa));
+		assertFalse(empresa.isValido("894242320001"));
+		assertFalse(empresa.isValido("00000000000000"));
+		assertFalse(empresa.isValido("11111111111111"));
+		assertFalse(empresa.isValido("22222222222222"));
+		assertFalse(empresa.isValido("33333333333333"));
+		assertFalse(empresa.isValido("44444444444444"));
+		assertFalse(empresa.isValido("55555555555555"));
+		assertFalse(empresa.isValido("66666666666666"));
+		assertFalse(empresa.isValido("77777777777777"));
+		assertFalse(empresa.isValido("88888888888888"));
+		assertFalse(empresa.isValido("99999999999999"));
+
 	}
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
+		empresaDAO.exclui("89424232000180");
 	}
 
 
